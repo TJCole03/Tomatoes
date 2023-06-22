@@ -40,6 +40,13 @@ describe('Test Endpoints', () => {
         // expect(response.body.fruitShape).toEqual('checking')
     })
 
+    test('Should get list of tomato varieties already grown on campus', async () => {
+        const response = await request(app)
+            .get('/tomatoes') //check on this
+            
+            expect(response.body).toMatchObject({})
+    })
+
 
 
 })
