@@ -25,19 +25,20 @@ describe('Test Endpoints', () => {
         .post('/tomatoes') //what does this line connect to? what is it supposed to connect to? 
             .send({
                 variety: 'checking', skinColor: 'checking',
-                // fleshColor: 'checking',  breed: 'checking',
-                // leafType: 'checking',    plantType: 'checking',
-                // plantHeight: 'checking', fruitShape: 'checking'
+                fleshColor: 'checking',  breed: 'checking',
+                leafType: 'checking',    plantType: 'checking',
+                //plantHeight: 'checking', 
+                fruitShape: 'checking'
             })
         expect(response.statusCode).toBe(200)
         expect(response.body.variety).toEqual('checking')
         expect(response.body.skinColor).toEqual('checking')
-        // expect(response.body.fleshColor).toEqual('checking')
-        // expect(response.body.breed).toEqual('checking')
-        // expect(response.body.leafType).toEqual('checking')
-        // expect(response.body.plantType).toEqual('checking')
-        // expect(response.body.plantHeight).toEqual('checking')
-        // expect(response.body.fruitShape).toEqual('checking')
+        expect(response.body.fleshColor).toEqual('checking')
+        expect(response.body.breed).toEqual('checking')
+        expect(response.body.leafType).toEqual('checking')
+        expect(response.body.plantType).toEqual('checking')
+        //expect(response.body.plantHeight).toEqual('checking')
+        expect(response.body.fruitShape).toEqual('checking')
     })
 
     test('Should get list of tomato varieties already grown on campus', async () => {
