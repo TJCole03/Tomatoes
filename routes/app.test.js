@@ -47,6 +47,40 @@ describe('Test Endpoints', () => {
             expect(response.body).toMatchObject({})
     })
 
+    test('Should get a single tomato by id', async () => {
+        const response = await request(app)
+            .get('/:id')
+
+            expect(response.body).toMatchObject({})
+    })
+
+    test('Should update tomato property', async () => {
+        const tomato = new Tomato({
+            variety: 'Big Boy', 
+            skinColor: 'Red'
+        })
+        await tomato.save()
+
+        const response = await request(app)
+            .put(`/tomatoes/${tomato.id}`)
+            .send({ variety: 'Big Man', skinColor: "Red" })
+        
+        expect(response.statusCode).toBe(200)
+        expect(response.body.message).toEqual('Updated tomato property')
+    })
+
+    test('Should delete tomato', async () => {
+        const tomatoes = new Tomato({
+            variety: 'Green Zebra', 
+            skinColor: 'Green'
+        })
+        await tomatoes.save()
+        
+        const response = await request(app)
+        .delete(`/:id/${tomatoes.id}`)
+        expect(response.body).toBe('Deleted Successfully')
+    })
+
 
 
 })
