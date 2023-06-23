@@ -56,7 +56,7 @@ describe('Test Endpoints', () => {
 
     test('Should update tomato property', async () => {
         const tomato = new Tomato({
-            variety: 'Big Boy', 
+            variety: 'Big Boy',
             skinColor: 'Red'
         })
         await tomato.save()
@@ -66,7 +66,7 @@ describe('Test Endpoints', () => {
             .send({ variety: 'Big Man', skinColor: "Red" })
         
         expect(response.statusCode).toBe(200)
-        expect(response.body.message).toEqual('Updated tomato property')
+        expect(response.body.message).toBe('Updated Successfully')
     })
 
     test('Should delete tomato', async () => {
@@ -77,10 +77,9 @@ describe('Test Endpoints', () => {
         await tomatoes.save()
         
         const response = await request(app)
-        .delete(`/:id/${tomatoes.id}`)
-        expect(response.body).toBe('Deleted Successfully')
+            .delete(`/tomatoes/${tomatoes.id}`)
+        expect(response.body).toEqual('Deleted Successfully')
     })
-
 
 
 })

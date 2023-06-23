@@ -34,23 +34,35 @@ exports.deleteTomato = async (req, res) => {
     try {
         const tomatoes = await Tomato.findOne({ _id: req.params.id })
         tomatoes.deleteOne()
-        res.json({ message: 'Deleted Successfuly' })
+        res.json('Deleted Successfully')
     } catch (error) {
         res.status(400).json({ message: error.message })
     }
 }
 
+// exports.updateTomato = async (req, res) => {
+//     try {
+//         //newProp means New Plant Properties
+//         const newProp = await Tomato.findOneAndUpdate({ _id: req.params.id })
+//             //id of document you wanna update 
+//             .get('/:id')
+//         //content of document you wanna update
+//             .put()
+//         // {new:true} use this object as third argument of the function
+//         //where will i get this information from?? where is everything stored? 
+        
+//     } catch (error) {
+//         res.status(400).json({ message: error.message })
+//         }
+// }
+
 exports.updateTomato = async (req, res) => {
     try {
+        const updates = Object.keys(req.body)
         //newProp means New Plant Properties
-        const newProp = await Tomato.findOneAndUpdate({ _id: req.params.id })
-            //id of document you wanna update 
-            .get('/:id')
-        //content of document you wanna update
-            .put()
-        // {new:true} use this object as third argument of the function
-        //where will i get this information from?? where is everything stored? 
-        
+        const newProp = await Tomato.findOne({ _id: req.params.id })
+        await newProp.save();
+        res.status(200).json({ newProp, message: 'Updated Successfully'})
     } catch (error) {
         res.status(400).json({ message: error.message })
         }
