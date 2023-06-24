@@ -1,18 +1,18 @@
 const express = require('express')
 const router = express.Router()
-const tomatoesControllers = require('../controllers/tomatoesControllers')
+const tomatoesController = require('../controllers/tomatoesController')
 
-//Botany students add novel varieties to database
-router.post('/', tomatoesControllers.addTomato); 
 //Sustainable agriculture students need to browse through potential tomato varieties for the campus community garden 
-router.get('/', tomatoesControllers.listTomatoes); 
+router.get('/', tomatoesController.listTomatoes); 
+//Botany students add novel varieties to database
+router.post('/', tomatoesController.addTomato); 
 // //A grad student in entymology finds out one variety is uniquely and shockngly resistant to root nematodes. They need to update the tomatoe's stats right away!
-router.put('/:id', tomatoesControllers.updateTomato); 
+router.put('/:id', tomatoesController.updateTomato); 
 // //Finding tomato by id
-router.get('/:id', tomatoesControllers.getTomato);
+router.get('/:id', tomatoesController.getTomato);
 // //Finding tomato/es by attribute(color)
 // //router.get(('/tomatoes' ? color : `${color}`).getTomatoByAttribute)
-// //
-router.delete('/:id', tomatoesControllers.deleteTomato); 
+// 
+router.delete('/:id', tomatoesController.deleteTomato); 
 
 module.exports = router; 

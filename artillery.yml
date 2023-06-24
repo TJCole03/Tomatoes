@@ -1,0 +1,14 @@
+config: 
+  target: 'http://localhost:3002'
+  phases: 
+    - duration: 30
+      arrivalRate: 10
+scenarios: 
+  - flow: 
+    - post: 
+      url: "/tomatoes"
+      json: 
+        variety: 'String', 
+        skinColor: 'String'
+    - get: 
+        url: "/tomatoes"

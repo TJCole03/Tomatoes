@@ -4,7 +4,7 @@ const { MongoMemoryServer } = require('mongodb-memory-server')
 const app = require('../app.js')
 const PORT = process.env.PORT || 3002
 const server = app.listen(`${PORT}`, () => console.log('Testing on PORT'))
-const Tomato = require('../models/tomatoesModel')
+const Tomato = require('../models/tomato.js')
 let mongoServer; 
 
 beforeAll(async () => {
@@ -39,7 +39,7 @@ describe('Test Endpoints', () => {
         expect(response.body.plantType).toEqual('checking')
         //expect(response.body.plantHeight).toEqual('checking')
         expect(response.body.fruitShape).toEqual('checking')
-    })
+    }) 
 
     test('Should get list of tomato varieties already grown on campus', async () => {
         const response = await request(app)
