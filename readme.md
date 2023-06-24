@@ -29,6 +29,6 @@ The programmer unwittingly created another application in the server.js file, wh
 
 ### How to Run 
 
-- Open terminal on computer
-- 
-
+- Start the server in VS Code terminal with the command `npm run dev` and wait for the messages "Michael Phelps eats 3002 calories at breakfast" and "My Old Nanny Grows Oranges" to open the server and connect to MongoDB. 
+- Open PostMan 
+- Open MongoDB and navigate to your database for tomatoes
