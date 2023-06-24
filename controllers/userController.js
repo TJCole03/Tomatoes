@@ -47,7 +47,7 @@ exports.loginUser = async (req, res) => {
 exports.logoutUser = async (req, res) => {
     try {
         const user = await User(req.body.id) 
-        res.json({ use, message: 'Logged Out'})
+        res.json({ user, message: 'Logged Out'})
     } catch (error) {
         res.status(421).json({ message: error.message })
         }
