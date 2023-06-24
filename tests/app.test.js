@@ -5,6 +5,7 @@ const app = require('../app.js')
 const PORT = process.env.PORT || 3002
 const server = app.listen(`${PORT}`, () => console.log('Testing on PORT'))
 const Tomato = require('../models/tomato.js')
+const User = require('../models/user.js')
 let mongoServer; 
 
 beforeAll(async () => {
@@ -82,5 +83,36 @@ describe('Test Endpoints', () => {
         expect(response.body).toEqual('Deleted Successfully')
     })
 
+    test('Should create user', async () => {
+        const response = await request(app)
+            .post('/user')
+            .send({
+                userName: "checking", 
+                password: "checking"
+            })
+        expect(response.statusCode).toBe(200)
+        expect(response.body.userName).toEqual('checking')
+        expect(response.body.password).toEqual('checking')
 
-})
+    })
+
+    test('Should login user', async () => {
+        const user = new User({ userName: 'string', password: 'string' })
+        await user.save()
+        const response = await request(app)
+            .post('/login')
+            .send(({ userName: 'string', password: 'string' }))
+        expect(response.statusCode).toBe(200)
+        expect(response.body.user.userName).toEqual('string')
+        expect(response.body.user.password).toEqual('string')
+        expect(response.body).toHaveProperty('token')
+     })
+
+    test('Should logout user', async () => {
+        const response = request(app)
+            .post('/user/logout')
+            .send({ userName: 'string' })
+        expect(response.body).toBe('Logged Out')
+    })
+
+}) 
