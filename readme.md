@@ -1,6 +1,6 @@
 # API for start of database for novel tomato varieties
 
-`tomatoes` is for university students studying the natural sciences to log novel tomato varieties bred through their studies 
+`tomatoes` is for university students studying the natural sciences to log novel tomato varieties bred and propagated through their studies 
 ##
 
 Contents
