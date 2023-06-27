@@ -11,7 +11,7 @@ exports.auth = async (req, res, next) => {
             throw new Error();
         }
         req.user = user;
-        next();
+        next(); 
     } catch (error) {
         res.status(401).send('Not Authorized')
     }

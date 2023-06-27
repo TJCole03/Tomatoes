@@ -28,18 +28,18 @@ describe('Test Endpoints', () => {
                 variety: 'checking', skinColor: 'checking',
                 fleshColor: 'checking',  breed: 'checking',
                 leafType: 'checking',    plantType: 'checking',
-                //plantHeight: 'checking', 
+                plantHeight: 'checking', 
                 fruitShape: 'checking'
             })
         expect(response.statusCode).toBe(200)
-        expect(response.body.variety).toEqual('checking')
-        expect(response.body.skinColor).toEqual('checking')
-        expect(response.body.fleshColor).toEqual('checking')
-        expect(response.body.breed).toEqual('checking')
-        expect(response.body.leafType).toEqual('checking')
-        expect(response.body.plantType).toEqual('checking')
-        //expect(response.body.plantHeight).toEqual('checking')
-        expect(response.body.fruitShape).toEqual('checking')
+        expect(response.body.tomato.variety).toEqual('checking')
+        expect(response.body.tomato.skinColor).toEqual('checking')
+        expect(response.body.tomato.fleshColor).toEqual('checking')
+        expect(response.body.tomato.breed).toEqual('checking')
+        expect(response.body.tomato.leafType).toEqual('checking')
+        expect(response.body.tomato.plantType).toEqual('checking')
+        expect(response.body.tomato.plantHeight).toEqual('checking')
+        expect(response.body.tomato.fruitShape).toEqual('checking')
     }) 
 
     test('Should get list of tomato varieties already grown on campus', async () => {
@@ -59,28 +59,43 @@ describe('Test Endpoints', () => {
     test('Should update tomato property', async () => {
         const tomato = new Tomato({
             variety: 'Big Boy',
-            skinColor: 'Red'
+            skinColor: 'Red', 
+            breed: 'Hybrid', 
+            plantType: 'Indeterminate',
+            plantHeight: 4, 
+            fruitShape: 'Flattened Globe'
         })
         await tomato.save()
 
         const response = await request(app)
             .put(`/tomatoes/${tomato.id}`)
-            .send({ variety: 'Big Man', skinColor: "Red" })
+            .send({
+                variety: 'Big Man',
+                skinColor: "Red",
+                breed: 'Hybrid', 
+                plantType: 'Indeterminate',
+                plantHeight: 4, 
+                fruitShape: 'Globe'
+            })
         
         expect(response.statusCode).toBe(200)
-        expect(response.body.message).toBe('Updated Successfully')
+        expect(response.body.newProp.message).toBe('Updated Successfully')
     })
 
     test('Should delete tomato', async () => {
         const tomatoes = new Tomato({
-            variety: 'Green Zebra', 
-            skinColor: 'Green'
+            variety: 'Big Boy',
+            skinColor: 'Red', 
+            breed: 'Hybrid', 
+            plantType: 'Indeterminate',
+            plantHeight: 4, 
+            fruitShape: 'Flattened Globe'
         })
-        await tomatoes.save()
+        await tomatoes.save();
         
         const response = await request(app)
             .delete(`/tomatoes/${tomatoes.id}`)
-        expect(response.body).toEqual('Deleted Successfully')
+        expect(response.body).toEqual({ message: 'Deleted Successfully'})
     })
 
     test('Should create user', async () => {
@@ -88,31 +103,40 @@ describe('Test Endpoints', () => {
             .post('/user')
             .send({
                 userName: "checking", 
+                email: "checking",
                 password: "checking"
             })
+           
         expect(response.statusCode).toBe(200)
-        expect(response.body.userName).toEqual('checking')
-        expect(response.body.password).toEqual('checking')
+        console.log(response.body)
+        expect(response.body.newUser.userName).toBe("checking")
+        expect(response.body.newUser.email).toBe("checking")
+        //expect(response.body.password).toEqual("checking")
+        expect(response.body).toHaveProperty('token')
 
     })
 
     test('Should login user', async () => {
-        const user = new User({ userName: 'string', password: 'string' })
+        const user = new User({ userName: 'string', email: 'string', password: 'string' })
         await user.save()
         const response = await request(app)
-            .post('/login')
-            .send(({ userName: 'string', password: 'string' }))
+            .post('/user/login')
+            .send(({ userName: 'string', email: 'string', password: 'string' }))
+        //console.log(response.body)
         expect(response.statusCode).toBe(200)
         expect(response.body.user.userName).toEqual('string')
-        expect(response.body.user.password).toEqual('string')
+        expect(response.body.user.email).toEqual('string')
+        expect(typeof response.body.user.password).toBe('string')
         expect(response.body).toHaveProperty('token')
      })
 
     test('Should logout user', async () => {
-        const response = request(app)
+        const response = await request(app)
             .post('/user/logout')
-            .send({ userName: 'string' })
-        expect(response.body).toBe('Logged Out')
+            .send({ userName: 'string', email: 'string', password: 'string'})
+            console.log('logout')
+            console.log(response.body)
+        expect(response.body.user).toBe({ message: 'Logged Out'})
     })
 
 }) 

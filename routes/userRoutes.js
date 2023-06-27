@@ -4,10 +4,10 @@ const userController = require('../controllers/userController')
 
 
 //Create User
-router.post('/user', userController.createUser)
+router.post('/', userController.createUser)
 //Login User
-router.post('/login', userController.auth, userController.loginUser)
+router.post('/login', userController.loginUser)
 //Logout User 
-router.post('/logout', userController.auth, userController.logoutUser)
+router.post('/', userController.auth, userController.logoutUser)
 
 module.exports = router; 

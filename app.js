@@ -9,5 +9,7 @@ const userRoutes = require('./routes/userRoutes')
 app.use(express.json());
 app.use(morgan('combined'));
 app.use('/tomatoes', tomatoesRoutes); 
-app.use('/users', userRoutes);
+app.use('/user', userRoutes);
+
+// app.use('/logout', logoutUser)
 module.exports = app;  
