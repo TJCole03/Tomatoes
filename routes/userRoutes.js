@@ -8,6 +8,6 @@ router.post('/', userController.createUser)
 //Login User
 router.post('/login', userController.loginUser)
 //Logout User 
-router.post('/', userController.auth, userController.logoutUser)
+router.post('/logout', userController.auth, userController.logoutUser)
 
 module.exports = router; 

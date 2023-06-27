@@ -28,7 +28,7 @@ describe('Test Endpoints', () => {
                 variety: 'checking', skinColor: 'checking',
                 fleshColor: 'checking',  breed: 'checking',
                 leafType: 'checking',    plantType: 'checking',
-                plantHeight: 'checking', 
+                plantHeight: 4, 
                 fruitShape: 'checking'
             })
         expect(response.statusCode).toBe(200)
@@ -38,7 +38,7 @@ describe('Test Endpoints', () => {
         expect(response.body.tomato.breed).toEqual('checking')
         expect(response.body.tomato.leafType).toEqual('checking')
         expect(response.body.tomato.plantType).toEqual('checking')
-        expect(response.body.tomato.plantHeight).toEqual('checking')
+        expect(response.body.tomato.plantHeight).toEqual(4)
         expect(response.body.tomato.fruitShape).toEqual('checking')
     }) 
 
@@ -79,7 +79,7 @@ describe('Test Endpoints', () => {
             })
         
         expect(response.statusCode).toBe(200)
-        expect(response.body.newProp.message).toBe('Updated Successfully')
+        expect(response.body.message).toBe('Updated Successfully')
     })
 
     test('Should delete tomato', async () => {
@@ -136,7 +136,7 @@ describe('Test Endpoints', () => {
             .send({ userName: 'string', email: 'string', password: 'string'})
             console.log('logout')
             console.log(response.body)
-        expect(response.body.user).toBe({ message: 'Logged Out'})
+        expect(response.body.message).toBe('Logged Out')
     })
 
 }) 
