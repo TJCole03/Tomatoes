@@ -2,7 +2,7 @@ const mongoose = require('mongoose')
 
 const tomatoSchema = new mongoose.Schema({
     variety: { type: String, required: true }, //Specific name of variety: Big Boy, Green Zebra, Jubilee
-     skinColor: { type: String, required: true }, //We have more colors of tomato than just red!
+    skinColor: { type: String, required: true }, //We have more colors of tomato than just red!
     fleshColor: { type: String }, //Only important if it differs from skin color. More for culinary purposes. 
     breed: { type: String, required: true }, //Hybrid? Hierloom? 
     leafType: { type: String}, //Optional. 

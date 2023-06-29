@@ -1,0 +1,21 @@
+config: 
+  target: 'http://localhost:3002'
+  phases: 
+    - duration: 30
+      arrivalRate: 10
+scenarios: 
+- name: Test
+  flow: 
+    - post:
+      url: "/tomatoes"
+      json: 
+         "variety": "String" 
+         "skinColor": "String"
+         "fleshColor": "String"
+         "breed": "String"
+         "leafType": "String"
+         "plantType": "String"
+         "plantHeight": 4
+         "fruitShape": "String"
+    - get: 
+        url: "/tomatoes"
