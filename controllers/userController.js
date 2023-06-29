@@ -56,4 +56,4 @@ exports.logoutUser = async (req, res) => {
     } catch (error) {
         res.status(421).json({ message: error.message })
         }
-}
+} 
