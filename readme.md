@@ -87,16 +87,16 @@ The programmer unwittingly created another application in the server.js file, wh
 - User will receive "message": "Login Successful" at bottom of output: 
 
 
-    "user": {
-        "_id": "649e25acffac690492c82f52",
-        "userName": "Bob Hope",
-        "email": "Bob@Hope.com",
-        "password": "$2b$08$4QYmXtsowXYHI9t04sIXA.XjW8fRpF1H4Y0M58Tg0gtqDTSztf6T6",
-        "isLoggedIn": true,
-        "__v": 0
-    },
-    "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NDllMjVhY2ZmYWM2OTA0OTJjODJmNTIiLCJpYXQiOjE2ODgwODYxNDh9.h46dx9frBUm5E_zeXq_YbznzzeApmAPJ4zw5v1v0KbU",
-    "message": "Login Successful!"
+        "user": {
+            "_id": "649e25acffac690492c82f52",
+            "userName": "Bob Hope",
+            "email": "Bob@Hope.com",
+            "password": "$2b$08$4QYmXtsowXYHI9t04sIXA.XjW8fRpF1H4Y0M58Tg0gtqDTSztf6T6",
+            "isLoggedIn": true,
+            "__v": 0
+        },
+        "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NDllMjVhY2ZmYWM2OTA0OTJjODJmNTIiLCJpYXQiOjE2ODgwODYxNDh9.h46dx9frBUm5E_zeXq_YbznzzeApmAPJ4zw5v1v0KbU",
+        "message": "Login Successful!"
 
 
 - LOGGING OUT 
@@ -109,15 +109,15 @@ The programmer unwittingly created another application in the server.js file, wh
 - Click `Send` or press `Enter` 
 - User will recieve the following output: 
 
-    "user": {
-        "_id": "649e25acffac690492c82f52",
-        "userName": "Bob Hope",
-        "email": "Bob@Hope.com",
-        "password": "$2b$08$FqTNk6NisQZWNSL6wduVceJnuvh6I2uykgpU9mmWukvwQhvPKgySy",
-        "isLoggedIn": false,
-        "__v": 0
-    },
-    "message": "Logged Out"
+        "user": {
+            "_id": "649e25acffac690492c82f52",
+            "userName": "Bob Hope",
+            "email": "Bob@Hope.com",
+            "password": "$2b$08$FqTNk6NisQZWNSL6wduVceJnuvh6I2uykgpU9mmWukvwQhvPKgySy",
+            "isLoggedIn": false,
+            "__v": 0
+        },
+        "message": "Logged Out"
 
 - User has successfully created, logged in, and logged out a new user
 
@@ -134,14 +134,14 @@ The programmer unwittingly created another application in the server.js file, wh
 - Select "Body" underneath search bar 
 - Use the following syntax and key-values for the json body: 
 
-    {   
-        "variety": "string",
-        "skinColor": "string",
-        "breed": "string",
-        "plantType": "string",
-        "plantHeight": number,
-        "fruitShape": "string"
-    }
+        {   
+            "variety": "string",
+            "skinColor": "string",
+            "breed": "string",
+            "plantType": "string",
+            "plantHeight": number,
+            "fruitShape": "string"
+        }
 
 - All properties are required for validation. If no available property, assign 'n/a' for property. 
 - OPTIONAL PROPERTIES: 
@@ -151,18 +151,18 @@ The programmer unwittingly created another application in the server.js file, wh
 - User will recieve an object like this in their body: 
 
 
-    "tomato": {
-        "variety": "Chianti Rose",
-        "skinColor": "Deep Pink",
-        "fleshColor": "Deep Pink",
-        "breed": "Open Pollinated",
-        "leafType": "potato",
-        "plantType": "Indeterminate",
-        "plantHeight": 5,
-        "fruitShape": "Beefsteak",
-        "_id": "649cb10b1f75b9020bef4640",
-        "__v": 0
-    }
+        "tomato": {
+            "variety": "Chianti Rose",
+            "skinColor": "Deep Pink",
+            "fleshColor": "Deep Pink",
+            "breed": "Open Pollinated",
+            "leafType": "potato",
+            "plantType": "Indeterminate",
+            "plantHeight": 5,
+            "fruitShape": "Beefsteak",
+            "_id": "649cb10b1f75b9020bef4640",
+            "__v": 0
+        }
 
 
 - DISPLAYING/READING TOMATOES (GET)
