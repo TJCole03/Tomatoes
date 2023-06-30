@@ -1,9 +1,9 @@
 # API for start of database for novel tomato varieties
-
+-------------------------------------------------------------------------------------------
 `tomatoes` is for university students studying the natural sciences to log novel tomato varieties bred and propagated through their studies 
 
 ### WIREFRAME
-
+-------------------------------------------------------------------------------------------
 
 
 ##
@@ -14,43 +14,125 @@ Contents
 * [Purpose] (#purpose) 
 * [Technologies_Used] (#technologies-used)
 * [Technical_Challenges] (#technical-challenges)
-* [How_To_Run] (#how-to-run)
+* [How_to_Install_App] (#how-to-install-app)
+* [User_Create_Login_and_Logout_in_Postman] (#postman-user)
+* [Running_CRUD_Functionality_on_Postman] (#postman-CRUD)
 
 
 ### Purpose 
-
+-------------------------------------------------------------------------------------------
 This is a basic API for a database for logging novel tomato varieties bred and propagated by university students around the world. 
 Every year we have new varieties of tomato that get bred in academic institutions. We at University of X need a centralized database for students of natural sciences all around the world to log and document novel tomato varieties.
 
 ### Technologies_Used
- 
+ ------------------------------------------------------------------------------------------
  MERN, Javascript, dotenv, jest, supertest, morgan, artillery 
  VS Code, Postman, GitHub, Trello, ERD Charts
 
 ### Technical_Challenges 
-
+-------------------------------------------------------------------------------------------
 The programmer unwittingly created another application in the server.js file, which essentially blocked Postman from accessing the routes. After some time spent debugging, the programmer discovered they had to delete and rearrange just a few lines in the server.js to make a proper connection between the app.js and server.js files. 
 
-### How to Install App 
-
+### How_to_Install_App 
+-------------------------------------------------------------------------------------------
 - Open terminal and type `mkdir tomatoes_API` in root folder. Press enter. 
-- Clone from Tomatoes repo: `git clone git@github.com:TJCole03/Tomatoes.git `
-- 
-- `npm init -y` in terminal 
-- `npm i ` on the following global installations: bcrypt, dotenc, express, jsonwebtoken, mongoose, morgan, nodemon. 
-- `npm i [item] -D` on the following for dev dependencies: artillery, jest, mongodb-memory-server, supertest
-- Starting server: `npm run dev` 
+- Clone from Tomatoes repo. Type command: `git clone git@github.com:TJCole03/Tomatoes.git `
+- Type command: `code . ` 
+## In_VS_Code 
+- Type command: `npm init -y` in terminal 
+- Type command: `npm install bcrypt dotenv express jsonwebtoken mongoose morgan nodemon`
+- Type command: `npm install artillery jest mongodb-memory-server supertest -D`
+- To start app in dev mode: Type command: `npm run dev` See messages: "Michael Phelphs eats 3002 calories at breakfast" and "My Old Nanny Grows Oranges" 
+        - User is now connected to server and MongoDB
+- To run tests: command: `control+C` to stop server on port 3002. Then type command `npm run test`
+        - User can now see all 8 test between two different models passing 
 
-### Running on Postman 
-
+### User_Create_Login_and_Logout_in_Postman
+-------------------------------------------------------------------------------------------
+- In VS Code, in clear terminal, run command `npm run dev` to start the server on port 3002
 - OPEN POSTMAN 
 - Set request type to HTTP 
 - Set text to JSON 
 - Set the data to raw 
+
+- CREATE USER
+- Use following syntax and key-values for json body: 
+
+        {
+            "userName": "Bob Hope", 
+            "email": "Bob@Hope.com", 
+            "password": "5678", 
+            "isLoggedIn": true 
+        }
+
+- User receives an object like the following in the output: 
+
+{
+    "newUser": {
+        "userName": "Bob Hope",
+        "email": "Bob@Hope.com",
+        "password": "$2b$08$4QYmXtsowXYHI9t04sIXA.XjW8fRpF1H4Y0M58Tg0gtqDTSztf6T6",
+        "isLoggedIn": true,
+        "_id": "649e25acffac690492c82f52",
+        "__v": 0
+    },
+    "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NDllMjVhY2ZmYWM2OTA0OTJjODJmNTIiLCJpYXQiOjE2ODgwODU5MzJ9.MnNs1bp3RhCTwq33nmAeiqTE6ve6vaeZ-VhjNJbrRw4"
+}
+
+- LOGGING IN 
+- User must put '/login' to end of URL in search bar: 
+        
+    `http://localhost:3002/user/login`
+- Press `Enter` or `Send`
+- User will receive "message": "Login Successful" at bottom of output: 
+
+{
+    "user": {
+        "_id": "649e25acffac690492c82f52",
+        "userName": "Bob Hope",
+        "email": "Bob@Hope.com",
+        "password": "$2b$08$4QYmXtsowXYHI9t04sIXA.XjW8fRpF1H4Y0M58Tg0gtqDTSztf6T6",
+        "isLoggedIn": true,
+        "__v": 0
+    },
+    "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NDllMjVhY2ZmYWM2OTA0OTJjODJmNTIiLCJpYXQiOjE2ODgwODYxNDh9.h46dx9frBUm5E_zeXq_YbznzzeApmAPJ4zw5v1v0KbU",
+    "message": "Login Successful!"
+}
+
+- LOGGING OUT 
+- User must highlight the value of "_id" and copy (NO QUOTATION MARKS)
+- User must change '/login' to '/logout': (DO NOT PRESS ENTER/SEND)
+    `http://localhost:3002/user/logout/649e25acffac690492c82f52` 
+- User must highlight the token in json object in output and copy (NO QUOTATION MARKS) 
+- User must click on `Auth`  underneath nearch bar, and under `Type` in dropbox select `Bearer Token`
+- User must paste the token in textbox that appears on right hand side of form
+- Click `Send` or press `Enter` 
+- User will recieve the following output: 
+{
+    "user": {
+        "_id": "649e25acffac690492c82f52",
+        "userName": "Bob Hope",
+        "email": "Bob@Hope.com",
+        "password": "$2b$08$FqTNk6NisQZWNSL6wduVceJnuvh6I2uykgpU9mmWukvwQhvPKgySy",
+        "isLoggedIn": false,
+        "__v": 0
+    },
+    "message": "Logged Out"
+}
+- User has successfully created, logged in, and logged out a new user
+
+### Running_CRUD_Functionality_on_Postman 
+-------------------------------------------------------------------------------------------
+- In VS Code, in clear terminal, run command `npm run dev` to start the server on port 3002
+- OPEN POSTMAN 
+- Set request type to HTTP 
+- Set text to JSON 
+- Set the data to raw 
+
 - CREATING FIRST TOMATO (POST)
 - In search bar, type http://localhost:3002/tomatoes and set method to POST on left 
 - Select "Body" underneath search bar 
-- Use the following syntax for the json body: 
+- Use the following syntax and key-values for the json body: 
 
     {   
         "variety": "string",
@@ -108,3 +190,5 @@ The programmer unwittingly created another application in the server.js file, wh
 - Change PUT to DELETE in dropdown box on left 
 - Press send 
 - User has now deleted their tomato 
+
+- User has successfully Created, Read, Updated, and Destroyed a tomato
