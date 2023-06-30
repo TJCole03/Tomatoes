@@ -36,13 +36,14 @@ The programmer unwittingly created another application in the server.js file, wh
 ### How_to_Install_App 
 -------------------------------------------------------------------------------------------
 - Open terminal and type `mkdir tomatoes_API` in root folder. Press enter. 
-- Clone from Tomatoes repo. Type command: `git clone git@github.com:TJCole03/Tomatoes.git `
-- Type command: `code . ` 
+- Clone from Tomatoes repo. Type command: `git clone git@github.com:TJCole03/Tomatoes.git`
+- ?????? what happens between these steps???
+- Type command: `code .` 
 ## In_VS_Code 
 - Type command: `npm init -y` in terminal 
 - Type command: `npm install bcrypt dotenv express jsonwebtoken mongoose morgan nodemon`
 - Type command: `npm install artillery jest mongodb-memory-server supertest -D`
-- To start app in dev mode: Type command: `npm run dev` See messages: "Michael Phelphs eats 3002 calories at breakfast" and "My Old Nanny Grows Oranges" 
+- To start app in dev mode: Type command: `npm run dev` See messages: "Michael Phelps eats 3002 calories at breakfast" and "My Old Nanny Grows Oranges" 
         - User is now connected to server and MongoDB
 - To run tests: command: `control+C` to stop server on port 3002. Then type command `npm run test`
         - User can now see all 8 test between two different models passing 
@@ -68,15 +69,15 @@ The programmer unwittingly created another application in the server.js file, wh
 - User receives an object like the following in the output: 
 
 
-    "newUser": {
-        "userName": "Bob Hope",
-        "email": "Bob@Hope.com",
-        "password": "$2b$08$4QYmXtsowXYHI9t04sIXA.XjW8fRpF1H4Y0M58Tg0gtqDTSztf6T6",
-        "isLoggedIn": true,
-        "_id": "649e25acffac690492c82f52",
-        "__v": 0
-    },
-    "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NDllMjVhY2ZmYWM2OTA0OTJjODJmNTIiLCJpYXQiOjE2ODgwODU5MzJ9.MnNs1bp3RhCTwq33nmAeiqTE6ve6vaeZ-VhjNJbrRw4"
+        "newUser": {
+            "userName": "Bob Hope",
+            "email": "Bob@Hope.com",
+            "password": "$2b$08$4QYmXtsowXYHI9t04sIXA.XjW8fRpF1H4Y0M58Tg0gtqDTSztf6T6",
+            "isLoggedIn": true,
+            "_id": "649e25acffac690492c82f52",
+            "__v": 0
+        },
+        "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NDllMjVhY2ZmYWM2OTA0OTJjODJmNTIiLCJpYXQiOjE2ODgwODU5MzJ9.MnNs1bp3RhCTwq33nmAeiqTE6ve6vaeZ-VhjNJbrRw4"
 
 
 - LOGGING IN 
@@ -100,8 +101,8 @@ The programmer unwittingly created another application in the server.js file, wh
 
 
 - LOGGING OUT 
-- User must highlight the value of "_id" and copy (NO QUOTATION MARKS)
-- User must change '/login' to '/logout': (DO NOT PRESS ENTER/SEND)
+- User must highlight the value of `_id` and copy (NO QUOTATION MARKS)
+- User must change `/login`to `/logout`: (DO NOT PRESS ENTER/SEND)
     `http://localhost:3002/user/logout/649e25acffac690492c82f52` 
 - User must highlight the token in json object in output and copy (NO QUOTATION MARKS) 
 - User must click on `Auth`  underneath nearch bar, and under `Type` in dropbox select `Bearer Token`
@@ -123,14 +124,14 @@ The programmer unwittingly created another application in the server.js file, wh
 
 ### Running_CRUD_Functionality_on_Postman 
 -------------------------------------------------------------------------------------------
-- In VS Code, in clear terminal, run command `npm run dev` to start the server on port 3002
+- In VS Code, in clear terminal, run command `npm run dev` to start the server on port `3002`
 - OPEN POSTMAN 
-- Set request type to HTTP 
-- Set text to JSON 
+- Set request type to `HTTP` 
+- Set text to `JSON` 
 - Set the data to raw 
 
 - CREATING FIRST TOMATO (POST)
-- In search bar, type http://localhost:3002/tomatoes and set method to POST on left 
+- In search bar, type `http://localhost:3002/tomatoes` and set method to POST on left 
 - Select "Body" underneath search bar 
 - Use the following syntax and key-values for the json body: 
 
@@ -143,9 +144,9 @@ The programmer unwittingly created another application in the server.js file, wh
             "fruitShape": "string"
         }
 
-- All properties are required for validation. If no available property, assign 'n/a' for property. 
+- All properties are required for validation. If no available property, assign `n/a` for property. 
 - OPTIONAL PROPERTIES: 
-    - leafType, and fleshColor 
+    - `leafType`, and `fleshColor` 
 - Optional properties can be inserted anywhere in the json body as long as the user follows syntax 
 - After the user inserts the desired properties, hit send
 - User will recieve an object like this in their body: 
@@ -167,12 +168,12 @@ The programmer unwittingly created another application in the server.js file, wh
 
 - DISPLAYING/READING TOMATOES (GET)
 
-- In search bar, change POST to GET in the dropdown box on left
+- In search bar, change `POST` to `GET` in the dropdown box on left
 - This displays the tomato the user created plus all tomatoes to be created in the future
 - Find any tomato and highlight the line of numbers and letters next to "_id": WITHOUT the quotation marks. This is the id tag.
 - Paste the id tag after a '/' in the search bar. It should look like this: 
 
-    http://localhost:3002/tomatoes/649cb10b1f75b9020bef4640
+    `http://localhost:3002/tomatoes/649cb10b1f75b9020bef4640`
 
 - Press send once completed 
 - The user now has only one tomato selected by its id
@@ -180,14 +181,14 @@ The programmer unwittingly created another application in the server.js file, wh
 - UPDATING TOMATOES (UPDATE)
 
 - Now that the user has selected a single tomato item they can add, remove, or change properties as they see fit 
-- Change GET to PUT in the dropdown box on left 
+- Change `GET` to `PUT` in the dropdown box on left 
 - In json body, select and delete and insert desired properties
 - After completion, press send 
 - The user will now recieve and updated version of their tomato
 
 - DELETING TOMATOES (DESTROY) 
 
-- Change PUT to DELETE in dropdown box on left 
+- Change `PUT` to `DELETE` in dropdown box on left 
 - Press send 
 - User has now deleted their tomato 
 
