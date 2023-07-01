@@ -17,6 +17,7 @@ Contents
 * [How_to_Install_App] (#how-to-install-app)
 * [User_Create_Login_and_Logout_in_Postman] (#postman-user)
 * [Running_CRUD_Functionality_on_Postman] (#postman-CRUD)
+* [Running_Tests] (#running-tests)
 
 
 ### Purpose 
@@ -37,16 +38,26 @@ The programmer unwittingly created another application in the server.js file, wh
 -------------------------------------------------------------------------------------------
 - Open terminal and type `mkdir tomatoes_API` in root folder. Press enter. 
 - Clone from Tomatoes repo. Type command: `git clone git@github.com:TJCole03/Tomatoes.git`
-- ?????? what happens between these steps???
 - Type command: `code .` 
 ## In_VS_Code 
 - Type command: `npm init -y` in terminal 
 - Type command: `npm install bcrypt dotenv express jsonwebtoken mongoose morgan nodemon`
 - Type command: `npm install artillery jest mongodb-memory-server supertest -D`
-- To start app in dev mode: Type command: `npm run dev` See messages: "Michael Phelps eats 3002 calories at breakfast" and "My Old Nanny Grows Oranges" 
+- In package.json, under `scripts`, assign the following operations: 
+
+        "scripts": {
+            "test": "jest",
+            "start": "node server.js",
+            "dev": "nodemon server.js",
+            "load": "artillery run tests/artillery.yml"
+            },
+        "jest": {
+            "testEnvironment": "node"
+            }
+
+- Also, change `index.js` to `server.js` in `main`  
+- To start app in dev mode: Type command: `npm run dev` See messages: `Michael Phelps eats 3002 calories at breakfast` and `My Old Nanny Grows Oranges` 
         - User is now connected to server and MongoDB
-- To run tests: command: `control+C` to stop server on port 3002. Then type command `npm run test`
-        - User can now see all 8 test between two different models passing 
 
 ### User_Create_Login_and_Logout_in_Postman
 -------------------------------------------------------------------------------------------
@@ -193,3 +204,22 @@ The programmer unwittingly created another application in the server.js file, wh
 - User has now deleted their tomato 
 
 - User has successfully Created, Read, Updated, and Destroyed a tomato
+
+### Running_Tests 
+
+- ROUTE TESTS: 
+
+- Type Command: `control+C` to stop server on port 3002. 
+- Type command: `npm run test`
+        - User can now see all 8 tests between two different models passing 
+- LOAD TEST: 
+
+- Type Command: `control+C` to stop server
+- Navigate to the right-pointed arrow in the bos with `zsh` adjacent 
+    - Click and select `Split Terminal`
+- In one terminal, type command: `npm run dev`
+- In the new terminal, type command: `npm run load` 
+    - User can now see the latency of the `POST` function on their system
+
+### Starting_App_Without_Dev_Mode 
+

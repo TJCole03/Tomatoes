@@ -6,7 +6,7 @@ const tomatoSchema = new mongoose.Schema({
     fleshColor: { type: String }, //Only important if it differs from skin color. More for culinary purposes. 
     breed: { type: String, required: true }, //Hybrid? Hierloom? 
     leafType: { type: String}, //Optional. 
-    plantType: { type: String, required: true }, //determinate vs indeterminate
+    plantType: { type: String, required: true, enum: ['Determinate', 'Indeterminate'] }, //determinate vs indeterminate
     plantHeight: { type: Number, required: true }, //Spacing is crucial when planting and height determines spacing
     fruitShape: { type: String, required: true }, //optional; round, oxheart, beefsteak, globe, grape
 }, { collection: 'tomatoes' })
