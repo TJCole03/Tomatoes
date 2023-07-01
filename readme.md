@@ -37,26 +37,16 @@ The programmer unwittingly created another application in the server.js file, wh
 ### How_to_Install_App 
 -------------------------------------------------------------------------------------------
 - Open terminal and type `mkdir tomatoes_API` in root folder. Press enter. 
+- `cd tomatoes_API`
 - Clone from Tomatoes repo. Type command: `git clone git@github.com:TJCole03/Tomatoes.git`
 - Type command: `code .` 
-## In_VS_Code 
-- Type command: `npm init -y` in terminal 
-- Type command: `npm install bcrypt dotenv express jsonwebtoken mongoose morgan nodemon`
-- Type command: `npm install artillery jest mongodb-memory-server supertest -D`
-- In package.json, under `scripts`, assign the following operations: 
+## In_VS_Code_Terminal
+- Type command: `cd Tomatoes` to get terminal to root folder, `Tomatoes`
+- Type command: `touch .env` to make your .env file
+- In .env file, add MONGO_URI and SECRET values 
+- Type command: `npm i` in terminal 
 
-        "scripts": {
-            "test": "jest",
-            "start": "node server.js",
-            "dev": "nodemon server.js",
-            "load": "artillery run tests/artillery.yml"
-            },
-        "jest": {
-            "testEnvironment": "node"
-            }
-
-- Also, change `index.js` to `server.js` in `main`  
-- To start app in dev mode: Type command: `npm run dev` See messages: `Michael Phelps eats 3002 calories at breakfast` and `My Old Nanny Grows Oranges` 
+- To start server and start app in dev mode: Type command: `npm run dev` See messages: `Michael Phelps eats 3002 calories at breakfast` and `My Old Nanny Grows Oranges` 
         - User is now connected to server and MongoDB
 
 ### User_Create_Login_and_Logout_in_Postman
