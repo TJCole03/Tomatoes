@@ -4,21 +4,8 @@
 
 ### WIREFRAME
 -------------------------------------------------------------------------------------------
+![Gemeral Users](../../../Tomatoes/Tomato_General_User_Landing_Page.png)
 
-
-[General Users Page](../../../Tomato_General_User_Landing_Page.png)
-
-[Student/Admin Login](../../../Student_Admin_Login.png)
-
-[Student/Admin Main Menu](../../../Main_Menu_Student_Admin.png)
-
-[Tomato_Image](../../../Tomato_Page.png)
-
-[Input New Variety](../../../Input_Tomatoes.png)
-
-[Update Varieties](../../../Update_Tomato.png)
-
-[ERD](../../../Library/Mobile%20Documents/com~apple~Preview/Documents/Untitled.png)
 
 Contents
 =========
