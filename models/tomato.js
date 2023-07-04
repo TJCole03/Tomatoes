@@ -8,7 +8,7 @@ const tomatoSchema = new mongoose.Schema({
     leafType: { type: String}, //Optional. 
     plantType: { type: String, required: true, enum: ['Determinate', 'Indeterminate'] }, //determinate vs indeterminate
     plantHeight: { type: Number, required: true }, //Spacing is crucial when planting and height determines spacing
-    fruitShape: { type: String, required: true }, //optional; round, oxheart, beefsteak, globe, grape
+    fruitShape: { type: String, required: true, enum: ['Round', 'Oxheart', 'Beefsteak', 'Globe', 'Grape', 'Other'] }, //optional; round, oxheart, beefsteak, globe, grape
 }, { collection: 'tomatoes' })
 
 const Tomato = mongoose.model('Tomato', tomatoSchema) 

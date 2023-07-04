@@ -202,14 +202,16 @@ The programmer unwittingly created another application in the server.js file, wh
 - Type Command: `control+C` to stop server on port 3002. 
 - Type command: `npm run test`
         - User can now see all 8 tests between two different models passing 
-- LOAD TEST: 
 
-- Type Command: `control+C` to stop server
-- Navigate to the right-pointed arrow in the bos with `zsh` adjacent 
+
+- ARTILLERY TEST: 
+- Type command: `control+C` to end testing in terminal 
+- Navigate to the boxed-in, right-pointed arrow with `zsh` adjacent. It is on the top bar of the terminal towards the right.
     - Click and select `Split Terminal`
-- In one terminal, type command: `npm run dev`
-- In the new terminal, type command: `npm run load` 
+- In one terminal, type command: `npm run dev` to open server
+- In the new terminal, type command: `npm run load` to run artillery test 
     - User can now see the latency of the `POST` function on their system
 
+### Starting_App_In_Dev_Mode 
 ### Starting_App_Without_Dev_Mode 
 
