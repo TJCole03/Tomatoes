@@ -6,7 +6,7 @@
 -------------------------------------------------------------------------------------------
 
 
-[General Users Page](../../../Tomato_General_User_Landing_Page.png)
+[General Users Page] <img src="../../../Tomato_General_User_Landing_Page.png" alt="General Users" />
 
 [Student/Admin Login](../../../Student_Admin_Login.png)
 
