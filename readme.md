@@ -6,7 +6,19 @@
 -------------------------------------------------------------------------------------------
 
 
-##
+![General Users Page](../../../Tomato_General_User_Landing_Page.png)
+
+![Student/Admin Login](../../../Student_Admin_Login.png)
+
+![Student/Admin Main Menu](../../../Main_Menu_Student_Admin.png)
+
+![Tomato_Image](../../../Tomato_Page.png)
+
+![Input New Variety](../../../Input_Tomatoes.png)
+
+![Update Varieties](../../../Update_Tomato.png)
+
+![ERD](../../../Library/Mobile%20Documents/com~apple~Preview/Documents/Untitled.png)
 
 Contents
 =========
@@ -46,8 +58,9 @@ The programmer unwittingly created another application in the server.js file, wh
 - In .env file, add MONGO_URI and SECRET values 
 - Type command: `npm i` in terminal 
 
-- To start server and start app in dev mode: Type command: `npm run dev` See messages: `Michael Phelps eats 3002 calories at breakfast` and `My Old Nanny Grows Oranges` 
+- To run server and start app in dev mode: Type command: `npm run dev` See messages: `Michael Phelps eats 3002 calories at breakfast` and `My Old Nanny Grows Oranges` 
         - User is now connected to server and MongoDB
+- To start app outside of dev mode, type `npm run start`
 
 ### User_Create_Login_and_Logout_in_Postman
 -------------------------------------------------------------------------------------------
@@ -57,7 +70,10 @@ The programmer unwittingly created another application in the server.js file, wh
 - Set text to JSON 
 - Set the data to raw 
 
-- CREATE USER
+- CREATE USER 
+- Set the request to `POST` in search bar
+- Type URL: `http://localhost:3002/user` This is the route for creating a user.
+
 - Use following syntax and key-values for json body: 
 
         {
@@ -212,6 +228,5 @@ The programmer unwittingly created another application in the server.js file, wh
 - In the new terminal, type command: `npm run load` to run artillery test 
     - User can now see the latency of the `POST` function on their system
 
-### Starting_App_In_Dev_Mode 
-### Starting_App_Without_Dev_Mode 
+
 
