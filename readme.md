@@ -4,7 +4,7 @@
 
 ### WIREFRAME
 -------------------------------------------------------------------------------------------
-![Gemeral Users](../../../Tomatoes/Tomato_General_User_Landing_Page.png)
+![General Users](../../../Tomatoes/Tomato_General_User_Landing_Page.png)
 
 
 Contents
@@ -22,7 +22,7 @@ Contents
 ### Purpose 
 -------------------------------------------------------------------------------------------
 This is a basic API for a database for logging novel tomato varieties bred and propagated by university students around the world. 
-Every year we have new varieties of tomato that get bred in academic institutions. We at University of X need a centralized database for students of natural sciences all around the world to log and document novel tomato varieties.
+Every year we have new varieties of tomato that get bred in academic institutions. I want to make a centralized database for university students to share their new botanical/mycological findings with each other and fellow researchers. 
 
 ### Technologies_Used
  ------------------------------------------------------------------------------------------
@@ -39,7 +39,7 @@ The programmer unwittingly created another application in the server.js file, wh
 - `cd tomatoes_API`
 - Clone from Tomatoes repo. Type command: `git clone git@github.com:TJCole03/Tomatoes.git`
 - Type command: `code .` 
-## In_VS_Code_Terminal
+### In_VS_Code_Terminal
 - Type command: `cd Tomatoes` to get terminal to root folder, `Tomatoes`
 - Type command: `touch .env` to make your .env file
 - In .env file, add MONGO_URI and SECRET values 
@@ -47,6 +47,7 @@ The programmer unwittingly created another application in the server.js file, wh
 
 - To run server and start app in dev mode: Type command: `npm run dev` See messages: `Michael Phelps eats 3002 calories at breakfast` and `My Old Nanny Grows Oranges` 
         - User is now connected to server and MongoDB
+
 - To start app outside of dev mode, type `npm run start`
 
 ### User_Create_Login_and_Logout_in_Postman
