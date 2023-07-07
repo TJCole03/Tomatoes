@@ -22,7 +22,8 @@ Contents
 ### Purpose 
 -------------------------------------------------------------------------------------------
 This is a basic API for a database for logging novel tomato varieties bred and propagated by university students around the world. 
-Every year we have new varieties of tomato that get bred in academic institutions. I want to make a centralized database for university students to share their new botanical/mycological findings with each other and fellow researchers. 
+Every year we have new varieties of tomato that get bred in academic institutions. I want to make a centralized database for university students to share their new findings with each other and fellow researchers. 
+
 
 ### Technologies_Used
  ------------------------------------------------------------------------------------------

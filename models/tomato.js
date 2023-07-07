@@ -1,14 +1,14 @@
 const mongoose = require('mongoose')
 
 const tomatoSchema = new mongoose.Schema({
-    variety: { type: String, required: true }, //Specific name of variety: Big Boy, Green Zebra, Jubilee
-    skinColor: { type: String, required: true }, //We have more colors of tomato than just red!
-    fleshColor: { type: String }, //Only important if it differs from skin color. More for culinary purposes. 
-    breed: { type: String, required: true }, //Hybrid? Hierloom? 
+    variety: { type: String, required: true }, 
+    skinColor: { type: String, required: true }, 
+    fleshColor: { type: String },  
+    breed: {type: String, required: true, enum: ['Hybrid', 'Hierloom'] }, 
     leafType: { type: String}, //Optional. 
-    plantType: { type: String, required: true, enum: ['Determinate', 'Indeterminate'] }, //determinate vs indeterminate
-    plantHeight: { type: Number, required: true }, //Spacing is crucial when planting and height determines spacing
-    fruitShape: { type: String, required: true, enum: ['Round', 'Oxheart', 'Beefsteak', 'Globe', 'Grape', 'Other'] }, //optional; round, oxheart, beefsteak, globe, grape
+    plantType: { type: String, required: true, enum: ['Determinate', 'Indeterminate'] }, 
+    plantHeight: { type: Number, required: true }, 
+    fruitShape: { type: String, required: true, enum: ['Round', 'Oxheart', 'Beefsteak', 'Globe', 'Grape', 'Other'] }, 
 }, { collection: 'tomatoes' })
 
 const Tomato = mongoose.model('Tomato', tomatoSchema) 
