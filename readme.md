@@ -4,12 +4,12 @@
 
 ### WIREFRAME
 -------------------------------------------------------------------------------------------
-![General Users](../../../Tomatoes/Tomato_General_User_Landing_Page.png)
-[Login](../../../Student_Admin_Login.png)
-![Main Menu](../../../Main_Menu_Student_Admin.png)
-![New Variety](../../../Input_Tomatoes.png)
-![Update Variety](../../../Update_Tomato.png)
-![ERD](../../../tomato_erd.png)
+![General Users](./imgs/Tomato_General_User_Landing_Page.png)
+![Login](./imgs/Student_Admin_Login.png)
+![Main Menu](./imgs/Main_Menu_Student_Admin.png)
+![New Variety](./imgs/Input_Tomatoes.png)
+![Update Variety](./imgs/Update_Tomato.png)
+![ERD](./imgs/tomato_erd.png)
 
 
 Contents!
