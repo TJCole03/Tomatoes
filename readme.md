@@ -5,9 +5,14 @@
 ### WIREFRAME
 -------------------------------------------------------------------------------------------
 ![General Users](../../../Tomatoes/Tomato_General_User_Landing_Page.png)
+[Login](../../../Student_Admin_Login.png)
+![Main Menu](../../../Main_Menu_Student_Admin.png)
+![New Variety](../../../Input_Tomatoes.png)
+![Update Variety](../../../Update_Tomato.png)
+![ERD](../../../tomato_erd.png)
 
 
-Contents
+Contents!
 =========
 
 * [Purpose] (#purpose) 
