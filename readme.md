@@ -2,17 +2,7 @@
 -------------------------------------------------------------------------------------------
 `tomatoes` is for university students studying the natural sciences to log novel tomato varieties bred and propagated through their studies 
 
-### WIREFRAME
--------------------------------------------------------------------------------------------
-![General Users](./imgs/Tomato_General_User_Landing_Page.png)
-![Login](./imgs/Student_Admin_Login.png)
-![Main Menu](./imgs/Main_Menu_Student_Admin.png)
-![New Variety](./imgs/Input_Tomatoes.png)
-![Update Variety](./imgs/Update_Tomato.png)
-![ERD](./imgs/tomato_erd.png)
-
-
-Contents!
+Contents
 =========
 
 * [Purpose] (#purpose) 
@@ -22,6 +12,19 @@ Contents!
 * [User_Create_Login_and_Logout_in_Postman] (#postman-user)
 * [Running_CRUD_Functionality_on_Postman] (#postman-CRUD)
 * [Running_Tests] (#running-tests)
+* [Routes] (#routes)
+
+### WIREFRAME
+-------------------------------------------------------------------------------------------
+![General Users](./imgs/Tomato_General_User_Landing_Page.png)
+![Login](./imgs/Student_Admin_Login.png)
+![Main Menu](./imgs/Main_Menu_Student_Admin.png)
+![New Variety](./imgs/Input_Tomatoes.png)
+![Update Variety](./imgs/Update_Tomato.png)
+
+
+
+
 
 
 ### Purpose 
@@ -45,12 +48,13 @@ The programmer unwittingly created another application in the server.js file, wh
 - `cd tomatoes_API`
 - Clone from Tomatoes repo. Type command: `git clone git@github.com:TJCole03/Tomatoes.git`
 - Type command: `code .` 
+-------------------------------------------------------------------------------------------
+
 ### In_VS_Code_Terminal
 - Type command: `cd Tomatoes` to get terminal to root folder, `Tomatoes`
 - Type command: `touch .env` to make your .env file
 - In .env file, add MONGO_URI and SECRET values 
 - Type command: `npm i` in terminal 
-
 - To run server and start app in dev mode: Type command: `npm run dev` See messages: `Michael Phelps eats 3002 calories at breakfast` and `My Old Nanny Grows Oranges` 
         - User is now connected to server and MongoDB
 
@@ -222,5 +226,22 @@ The programmer unwittingly created another application in the server.js file, wh
 - In the new terminal, type command: `npm run load` to run artillery test 
     - User can now see the latency of the `POST` function on their system
 
+### Routes 
 
+- USER ROUTES
 
+| **HTTP Method** | **End Point**    |    **Action**     |
+| :-------------- | :--------------: | ----------------: |
+| POST            | /user            | Creates user      |
+| POST            | /user/login      | Logs in user      |
+| POST            | /user/logout/:id | Logs out user     |
+
+- TOMATO ROUTES
+
+| **HTTP Method** | **End Point**    |    **Action**                  |
+| :-------------- | :-----------:    | ----------------------------:  |
+| GET             |  /tomatoes       | Gets full list of tomatoes     |  
+| GET             |  /tomatoes/:id   | Gets one tomato based on id    |
+| POST            |  /tomatoes       | Creates new tomato             |
+| PUT             |  /tomatoes/:id   | Updates tomato                 |
+| DELETE          |  /tomatoes/:id   | Deletes tomato                 |
