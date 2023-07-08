@@ -22,9 +22,9 @@ Contents
 ![New Variety](./imgs/Input_Tomatoes.png)
 ![Update Variety](./imgs/Update_Tomato.png)
 
+### ERD
 
-
-
+![ERD](./imgs/TomatoAPI_ERD.png)
 
 
 ### Purpose 
@@ -219,6 +219,7 @@ The programmer unwittingly created another application in the server.js file, wh
 
 
 - ARTILLERY TEST: 
+
 - Type command: `control+C` to end testing in terminal 
 - Navigate to the boxed-in, right-pointed arrow with `zsh` adjacent. It is on the top bar of the terminal towards the right.
     - Click and select `Split Terminal`
