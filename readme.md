@@ -26,6 +26,10 @@ Contents
 
 ![ERD](./imgs/TomatoAPI_ERD.png)
 
+### Trello Board 
+
+`https://trello.com/b/LnabUXHm/unit-2-project`
+
 
 ### Purpose 
 -------------------------------------------------------------------------------------------
@@ -40,7 +44,7 @@ Every year we have new varieties of tomato that get bred in academic institution
 
 ### Technical_Challenges 
 -------------------------------------------------------------------------------------------
-The programmer unwittingly created another application in the server.js file, which essentially blocked Postman from accessing the routes. After some time spent debugging, the programmer discovered they had to delete and rearrange just a few lines in the server.js to make a proper connection between the app.js and server.js files. 
+The programmer created another application in the server.js file, which essentially blocked Postman from accessing the routes. After some time spent debugging, the programmer discovered they had to delete and rearrange just a few lines in the server.js to make a proper connection between the app.js and server.js files. 
 
 ### How_to_Install_App 
 -------------------------------------------------------------------------------------------

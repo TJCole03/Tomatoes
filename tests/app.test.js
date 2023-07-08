@@ -10,6 +10,7 @@ let mongoServer;
 
 beforeAll(async () => {
     mongoServer = await MongoMemoryServer.create()
+    console.log(mongoServer.getUri())
     await mongoose.connect(mongoServer.getUri())
 })
 
