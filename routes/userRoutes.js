@@ -6,7 +6,7 @@ const userController = require('../controllers/userController')
 //Create User
 router.post('/', userController.createUser)
 //Login User
-router.post('/login', userController.loginUser)
+router.post('/login', userController.auth, userController.loginUser)
 //Logout User 
 router.post('/logout/:id', userController.auth, userController.logoutUser)
 
