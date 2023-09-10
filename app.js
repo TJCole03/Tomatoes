@@ -11,5 +11,8 @@ app.use(morgan('combined'));
 app.use('/tomatoes', tomatoesRoutes); 
 app.use('/user', userRoutes);
 
+app.use(express.urlencoded({ extended: true }))
+
+
 // app.use('/logout', logoutUser)
 module.exports = app;  

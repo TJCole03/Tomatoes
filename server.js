@@ -1,9 +1,9 @@
 require('dotenv').config()
 const app = require('./app')
+const jsxEngine = require('jsx-view-engine');
 const mongoose = require('mongoose')
 const PORT = process.env.PORT || 3009
 
-app.use(express.urlencoded({ extended: true }))
 
 app.set('view engine', 'jsx')
 app.engine('jsx', jsxEngine())
