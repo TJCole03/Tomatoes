@@ -4,7 +4,7 @@ const PORT = process.env.PORT || 3009
 const express = require('express')
 // // const methodOverride = require('method-override')
 // const morgan = require('morgan')
-// const tomatoesRoutes = require('./routes/tomatoesRoutes')
+//const tomatoesRoutes = require('./routes/tomatoesRoutes')
 // const userRoutes = require('./routes/userRoutes')
 const Tomato = require('./models/tomato')
 const jsxEngine = require('jsx-view-engine');
@@ -14,13 +14,15 @@ const jsxEngine = require('jsx-view-engine');
 // require('./views/ShowTomato')
 
 const app = express();
+const bodyParser = require("body-parser")
 
+app.use(bodyParser.urlencoded({ extended: true }));
 // app.use(express.urlencoded({ extended: true }))
 
 // app.use(express.json());
 // //app.use(methodOverride('_method'));
 // app.use(morgan('combined'));
-// app.use('/tomatoes', tomatoesRoutes); 
+//app.use('/tomatoes', tomatoesRoutes); 
 // app.use('/user', userRoutes);
 
 app.set('view engine', 'jsx')
@@ -51,7 +53,6 @@ app.get('/tomatoes', async (req, res) => {
 app.get('/tomatoes/new', (req, res) => {
     res.render('./tomatoes/New')
 })
-console.log('hit') 
 
 //DELETE 
 
@@ -83,8 +84,9 @@ app.put('/tomatoes/:id', async (req, res) => {
 
 app.post('/tomatoes', async (req, res) => {
     try {
-        const newVariety = new Tomato.create(req.body)
-        res.redirect(`/tomatoes/${newVariety._id}`)
+        const newVariety = await Tomato.create(req.body)
+        res.send(`/tomatoes/${newVariety}`)
+         //res.redirect(`/tomatoes/${newVariety._id}`)
 
     } catch (error) {
         res.status(400).send({ message: error.message })
@@ -109,7 +111,7 @@ app.get('/tomatoes/:id/edit', async (req, res) => {
 app.get('tomatoes/:id', async (req, res) => {
     try {
         const foundTomato = await Tomato.findOne({ _id: req.params.id })
-        res.render('/tomatoes/Showz', {
+        res.render('/tomatoes/Show', {
             tomatoes: foundTomato
         })
     } catch (error) {

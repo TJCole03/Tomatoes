@@ -1,6 +1,6 @@
 const React = require('react')
 
-function New() {
+function New(props) {
     return (
         <div>
             <h1>New Variety</h1>

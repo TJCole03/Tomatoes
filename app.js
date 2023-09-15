@@ -4,12 +4,12 @@ const morgan = require('morgan')
 const tomatoesRoutes = require('./routes/tomatoesRoutes')
 // const userRoutes = require('./routes/userRoutes')
 //  //ONYL NEED THIS ONCE 
-// //const tomatoesModel = require('./models/tomato')
+// const tomatoesModel = require('./models/tomato')
 // const Tomato = require('./models/tomato')
 const jsxEngine = require('jsx-view-engine');
 
 app.use(express.urlencoded({ extended: true }))
-// app.use(express.json());
+///app.use(express.json());
 app.use(morgan('combined'));
 app.use('/tomatoes', tomatoesRoutes); 
 // app.use('/user', userRoutes);

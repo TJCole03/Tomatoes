@@ -13,4 +13,6 @@ const tomatoSchema = new mongoose.Schema({
 
 const Tomato = mongoose.model('Tomato', tomatoSchema) 
 
+
+
 module.exports = Tomato
