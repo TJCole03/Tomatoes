@@ -7,7 +7,8 @@ const userSchema = new mongoose.Schema({
     userName: { type: String, required: true }, 
     email: { type: String, required: true },
     password: { type: String, required: true },
-    isLoggedIn: Boolean
+    isLoggedIn: Boolean,
+    tomatoes: [{ type:  mongoose.Schema.Types.ObjectId, ref: 'tomato' }]
 })
 
 userSchema.pre('save', async function (next) {

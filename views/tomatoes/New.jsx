@@ -1,10 +1,11 @@
 const React = require('react')
 
-function New(props) {
+function New() {
     return (
         <div>
             <h1>New Variety</h1>
-            <form action="/fruits" method="POST">
+            <a href='/tomatoes'>To Index</a>
+            <form action="/tomatoes/" method="POST">
                 Variety: <input type="text" name="Variety" /><br />
                 Skin Color: <input type="text" name="Skin Color" /><br />
                 Flesh Color: <input type="text" name="Flesh Color" /><br />
@@ -15,7 +16,6 @@ function New(props) {
                 Fruit Shape: <input type="text" name="Shape" /><br />
                 <input type="submit" value="Add New Variety" /><br/> 
             </form>
-
         </div>
     )
 }
