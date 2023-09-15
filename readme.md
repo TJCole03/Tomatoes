@@ -28,7 +28,7 @@ Contents
 
 ### Trello Board 
 
-<a href= 'https://trello.com/b/LnabUXHm/unit-2-project'> Tello Board />
+<a href= 'https://trello.com/b/LnabUXHm/unit-2-project'> Tello Board 
 
 `https://trello.com/b/LnabUXHm/unit-2-project`
 
