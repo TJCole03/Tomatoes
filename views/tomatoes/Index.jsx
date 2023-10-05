@@ -18,7 +18,7 @@ function Index(props) {
                 }
             </ul>
         </div>
-        {/* <div>
+        <div>
             <h1>Index Potatoes Page</h1>
             <a href="/potatoes/new">Add New Variety</a>
             <ul>
@@ -32,7 +32,7 @@ function Index(props) {
                     })
                 }
             </ul>
-            </div> */}
+            </div>
      </>
     )
 }

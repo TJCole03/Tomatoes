@@ -17,7 +17,7 @@ function Show(props) {
             </p>
         </div>
         <div>
-            <h1>{props.tomato.variety}</h1> //curly braces magically turns the content into JS code
+            <h1>{props.potato.variety}</h1> //curly braces magically turns the content into JS code
             <a href='/potatoes'>Index Page</a>
             <p>
                 {props.potato.skinColor}
