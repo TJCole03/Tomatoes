@@ -8,7 +8,7 @@ function Index(props) {
             <a href="/tomatoes/new">Add New Variety</a>
             <ul>
                 {
-                    props.tomatoes.map((tomato) => {
+                    props.tomatoes?.map((tomato) => {
                         return (
                             <li key={tomato._id}>
                                 <a href={`/tomatoes/${tomato._id}`}></a> 
@@ -23,7 +23,7 @@ function Index(props) {
             <a href="/potatoes/new">Add New Variety</a>
             <ul>
                 {
-                    props.potatoes.map((potato) => {
+                    props.potatoes?.map((potato) => {
                         return (
                             <li key={potato._id}>
                                 <a href={`/potatoes/${potato._id}`}></a> 
