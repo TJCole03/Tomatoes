@@ -11,10 +11,10 @@ function Edit (props) {
             plantHeight,
         fruitShape,
         } = props.tomatoes
-    const { 
+    // const { 
  
-            rootShape,
-        } = props.potatoes
+    //         rootShape,
+    //     } = props.potatoes
     return (
        <>
         <div>

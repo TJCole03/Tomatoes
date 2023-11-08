@@ -7,6 +7,7 @@ const express = require('express')
 //const tomatoesRoutes = require('./routes/tomatoesRoutes')
 // const userRoutes = require('./routes/userRoutes')
 const Tomato = require('./models/tomato')
+const Potato = require('./models/potato')
 const jsxEngine = require('jsx-view-engine');
 // require('./views/Edit')
 // require('./views/IndexTomato')
@@ -85,8 +86,18 @@ app.put('/tomatoes/:id', async (req, res) => {
 app.post('/tomatoes', async (req, res) => {
     try {
         const newVariety = await Tomato.create(req.body)
-        res.send(`/tomatoes/${newVariety}`)
-         //res.redirect(`/tomatoes/${newVariety._id}`)
+        //res.send(`/tomatoes/${newVariety}`)
+        res.redirect(`/tomatoes/${newVariety._id}`)
+
+    } catch (error) {
+        res.status(400).send({ message: error.message })
+    }
+})
+app.post('/potatoes', async (req, res) => {
+    try {
+        const newVariety = await Potato.create(req.body)
+        //res.send(`/potatoes/${newVariety}`)
+        res.redirect(`/potatoes/${newVariety._id}`)
 
     } catch (error) {
         res.status(400).send({ message: error.message })

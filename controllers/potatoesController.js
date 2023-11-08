@@ -6,8 +6,8 @@ exports.addPotato = async (req, res) => {
     try {
         const addPotato = new Potato(req.body)
         await addPotato.save()
-        // res.json({Potato: addPotato})
-        res.send(addPotato)
+        res.json({Potato: addPotato})
+        //res.send(addPotato)
     } catch (error) {
         res.status(400).json({ message: error.message })
     } 
