@@ -16,7 +16,7 @@ function Show(props) {
                 {props.tomato.fruitShape}
             </p>
         </div>
-        <div>
+        {/* <div>
             <h1>{props.potato.variety}</h1> //curly braces magically turns the content into JS code
             <a href='/potatoes'>Index Page</a>
             <p>
@@ -28,7 +28,7 @@ function Show(props) {
                 {props.potato.plantHeight}
                 {props.potato.rootShape}
             </p>
-            </div>
+            </div> */}
         </>    
     )
 }

@@ -1,30 +1,30 @@
 require('dotenv').config()
-const mongoose = require('mongoose')
-const PORT = process.env.PORT || 3009
 const express = require('express')
-// // const methodOverride = require('method-override')
-// const morgan = require('morgan')
-//const tomatoesRoutes = require('./routes/tomatoesRoutes')
-// const userRoutes = require('./routes/userRoutes')
-const Tomato = require('./models/tomato')
-const Potato = require('./models/potato')
+const mongoose = require('mongoose')
 const jsxEngine = require('jsx-view-engine');
+const Tomato = require('./models/tomato')
+const PORT = process.env.PORT || 3009
+const methodOverride = require('method-override')
+const morgan = require('morgan')
+const tomatoesRoutes = require('./routes/tomatoesRoutes')
+const userRoutes = require('./routes/userRoutes')
+// const Potato = require('./models/potato')
 // require('./views/Edit')
 // require('./views/IndexTomato')
 // require('./view/NewTomato')
 // require('./views/ShowTomato')
 
 const app = express();
-const bodyParser = require("body-parser")
+//const bodyParser = require("body-parser")
 
-app.use(bodyParser.urlencoded({ extended: true }));
-// app.use(express.urlencoded({ extended: true }))
+//app.use(bodyParser.urlencoded({ extended: true }));
+app.use(express.urlencoded({ extended: true }))
 
-// app.use(express.json());
-// //app.use(methodOverride('_method'));
-// app.use(morgan('combined'));
-//app.use('/tomatoes', tomatoesRoutes); 
-// app.use('/user', userRoutes);
+app.use(express.json());
+app.use(methodOverride('_method'));
+app.use(morgan('combined'));
+app.use('/tomatoes', tomatoesRoutes); 
+app.use('/user', userRoutes);
 
 app.set('view engine', 'jsx')
 app.engine('jsx', jsxEngine())
@@ -80,7 +80,7 @@ app.put('/tomatoes/:id', async (req, res) => {
     } catch (error) {
         res.status(400).send({ message: error.message })
     }
-} )
+})
 //CREATE??
 
 app.post('/tomatoes', async (req, res) => {
@@ -93,16 +93,16 @@ app.post('/tomatoes', async (req, res) => {
         res.status(400).send({ message: error.message })
     }
 })
-app.post('/potatoes', async (req, res) => {
-    try {
-        const newVariety = await Potato.create(req.body)
-        //res.send(`/potatoes/${newVariety}`)
-        res.redirect(`/potatoes/${newVariety._id}`)
+// app.post('/potatoes', async (req, res) => {
+//     try {
+//         const newVariety = await Potato.create(req.body)
+//         //res.send(`/potatoes/${newVariety}`)
+//         res.redirect(`/potatoes/${newVariety._id}`)
 
-    } catch (error) {
-        res.status(400).send({ message: error.message })
-    }
-})
+//     } catch (error) {
+//         res.status(400).send({ message: error.message })
+//     }
+// })
 
 //EDIT
 

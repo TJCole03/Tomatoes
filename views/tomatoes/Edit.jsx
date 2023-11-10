@@ -32,10 +32,10 @@ function Edit (props) {
                 <input type="submit" value="Update Variety" />
             </form>
         </div>
-        <div>
+        {/* <div> */}
             <h1>{name} Edit Page</h1>
-            <a href='/potatoes'>Index Page</a>
-            <form action={`/potatoes/${_id}?_method=PUT`} method="POST">
+            {/* <a href='/potatoes'>Index Page</a> */}
+            {/* <form action={`/potatoes/${_id}?_method=PUT`} method="POST"> */}
                     variety: <input type="text" name="variety" defaultValue={variety} /><br/>
                     skinColor: <input type="text" name="variety" defaultValue={skinColor} /><br/>
                     fleshColor: <input type="text" name="variety" defaultValue={fleshColor} /><br/>
@@ -45,8 +45,8 @@ function Edit (props) {
                     plantHeight: <input type="text" name="variety" defaultValue={plantHeight} /><br/>
                     rootShape: <input type="text" name="variety" defaultValue={rootShape} /><br/>
                 <input type="submit" value="Update Variety" />
-            </form>
-            </div>
+            {/* </form> */}
+            {/* </div> */}
         </> 
     
     )
