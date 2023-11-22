@@ -19,7 +19,7 @@ function New(props) {
                 <input type="submit" value="Add New Variety" className={styles.input} /><br/> 
             </form>
         </div>
-        {/* <div className={styles.potDiv}>
+        <div className={styles.potDiv}>
             <h1 className={styles.h1}>New Potato Variety</h1>
             <a href='/potatoes' className={styles.a}>To Index</a>
             <form action="/potatoes/" method="POST" className={styles.form}>
@@ -33,7 +33,7 @@ function New(props) {
                 Root Shape: <input type="text" name="Shape" /><br />
                 <input type="submit" value="Add New Variety" className={styles.input} /><br/> 
             </form>
-        </div> */}
+        </div>
       </>  
     )
 }

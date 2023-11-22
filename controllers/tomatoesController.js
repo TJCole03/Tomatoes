@@ -25,9 +25,9 @@ exports.listTomatoes = async (req, res) => {
 }
     
 exports.getTomato = async (req, res) => {
-    console.log('getTomato')
+    console.log('getTomato hit')
     try {
-        const tomato = await Tomato.findOne({ _id: req.params.id })
+        const tomato = await Tomato.findById({ _id: req.params.id })
         res.json(tomato)
     } catch (error) {
         res.status(400).json({ message: error.message })
