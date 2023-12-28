@@ -7,7 +7,9 @@ const PORT = process.env.PORT || 3009
 const methodOverride = require('method-override')
 const morgan = require('morgan')
 const tomatoesRoutes = require('./routes/tomatoesRoutes')
+const potatoesRoutes = require('./routes/potatoesRoutes')
 const userRoutes = require('./routes/userRoutes')
+const newVariety = require('./controllers/tomatoesController')
 // const Potato = require('./models/potato')
 // require('./views/Edit')
 // require('./views/IndexTomato')
@@ -23,8 +25,12 @@ app.use(express.urlencoded({ extended: true }))
 app.use(express.json());
 app.use(methodOverride('_method'));
 app.use(morgan('combined'));
-app.use('/tomatoes', tomatoesRoutes); 
+app.use('/tomatoes', tomatoesRoutes);
+app.use( '/potatoes', potatoesRoutes) 
 app.use('/user', userRoutes);
+
+/* Controllers */
+// app.use('/tomatoes/new', newVariety)
 
 app.set('view engine', 'jsx')
 app.engine('jsx', jsxEngine())
@@ -83,7 +89,7 @@ app.put('/tomatoes/:id', async (req, res) => {
 })
 //CREATE??
 
-app.post('/tomatoes', async (req, res) => {
+app.post('/tomatoes/new', async (req, res) => {
     try {
         const newVariety = await Tomato.create(req.body)
         //res.send(`/tomatoes/${newVariety}`)
@@ -93,16 +99,16 @@ app.post('/tomatoes', async (req, res) => {
         res.status(400).send({ message: error.message })
     }
 })
-// app.post('/potatoes', async (req, res) => {
-//     try {
-//         const newVariety = await Potato.create(req.body)
-//         //res.send(`/potatoes/${newVariety}`)
-//         res.redirect(`/potatoes/${newVariety._id}`)
+app.post('/potatoes', async (req, res) => {
+    try {
+        const newVariety = await Potato.create(req.body)
+        //res.send(`/potatoes/${newVariety}`)
+        res.redirect(`/potatoes/${newVariety._id}`)
 
-//     } catch (error) {
-//         res.status(400).send({ message: error.message })
-//     }
-// })
+    } catch (error) {
+        res.status(400).send({ message: error.message })
+    }
+})
 
 //EDIT
 
